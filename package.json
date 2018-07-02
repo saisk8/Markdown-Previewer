@@ -12,7 +12,9 @@
     "react-dom": "^16.4.1",
     "react-markdown": "^3.3.4",
     "react-scripts": "1.1.4",
-    "reactstrap": "^6.2.0"
+    "reactstrap": "^6.2.0",
+    "typeface-nunito": "0.0.54",
+    "typeface-shrikhand": "0.0.54"
   },
   "scripts": {
     "start": "react-scripts start",
