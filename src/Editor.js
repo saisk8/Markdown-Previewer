@@ -11,13 +11,26 @@ const headerStyle = {
 };
 
 class Editor extends Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.props.onNewChange(event);
+  }
+
   render() {
     return (
       <Card style={paneStyle}>
-        <CardHeader tag="h3" style={headerStyle}>
+        <CardHeader tag="h4" style={headerStyle}>
           Featured
         </CardHeader>
-        <textarea className="EditorArea" />
+        <textarea
+          className="EditorArea"
+          onChange={this.handleChange}
+          value={this.props.input}
+        />
       </Card>
     );
   }
