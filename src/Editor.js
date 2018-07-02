@@ -24,7 +24,7 @@ class Editor extends Component {
     return (
       <Card style={paneStyle}>
         <CardHeader tag="h4" style={headerStyle}>
-          Featured
+          Markdown
         </CardHeader>
         <textarea
           className="EditorArea"
