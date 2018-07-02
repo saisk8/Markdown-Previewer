@@ -10,16 +10,15 @@ const paneStyle = {
 const headerStyle = {
   textAlign: 'center'
 };
-const input = '# Test header';
 
 class Preview extends Component {
   render() {
     return (
       <Card style={paneStyle}>
-        <CardHeader tag="h3" style={headerStyle}>
+        <CardHeader tag="h4" style={headerStyle}>
           Preview
         </CardHeader>
-        <ReactMarkdown source={input} />
+        <ReactMarkdown source={this.props.markdown} />
       </Card>
     );
   }
