@@ -1,0 +1,39 @@
+{
+  "name": "markdown-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "ajv": "^6.5.2",
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1",
+    "markdown-it": "^8.4.1",
+    "popper.js": "^1.14.3",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4",
+    "reactstrap": "^6.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "description": "A simple react app",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/somanath08/Markdown-Previewer.git"
+  },
+  "keywords": [
+    "React",
+    "Freecodecamp"
+  ],
+  "author": "Sai Somanath Komanduri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/somanath08/Markdown-Previewer/issues"
+  },
+  "homepage": "https://github.com/somanath08/Markdown-Previewer#readme"
+}
