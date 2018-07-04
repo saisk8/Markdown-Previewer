@@ -1,16 +1,18 @@
 code {
   background: #efefef;
-  padding: 1px 4px 2px 4px;
+  padding: 8px 4px 4px 8px;
   font-size: 12px;
   font-weight: bold;
 }
 
 pre {
+  border-radius: 8px;
+  border: 1px solid orangered;
   background: #efefef;
-  padding: 5px 0 5px 5px;
+  padding: 8px 4px 4px 8px;
 }
 
 #preview {
-  overflow: scroll;
-  margin: 3px 5px 3px 5px;
+  overflow: scroll !important;
+  margin: 3px 5px 3px 3px;
 }

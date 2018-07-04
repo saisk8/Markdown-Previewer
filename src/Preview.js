@@ -2,6 +2,17 @@ import React, { Component } from 'react';
 import './Preview.css';
 import { Card, CardHeader } from 'reactstrap';
 import marked from 'marked';
+import markdown from 'markdown-it';
+
+const md = markdown({
+  html: false,
+  xhtmlOut: false,
+  breaks: true,
+  langPrefix: 'language-',
+  linkify: true,
+  typographer: true,
+  quotes: '“”‘’'
+});
 
 const paneStyle = {
   borderRadius: '0px',
@@ -28,6 +39,10 @@ renderer.link = function(href, title, text) {
 };
 
 class Preview extends Component {
+  result() {
+    return md.render(this.props.markdown);
+  }
+
   render() {
     return (
       <Card style={paneStyle}>
@@ -37,7 +52,7 @@ class Preview extends Component {
         <div
           id="preview"
           dangerouslySetInnerHTML={{
-            __html: marked(this.props.markdown, { renderer })
+            __html: this.result()
           }}
         />
       </Card>
