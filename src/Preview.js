@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import ReactMarkdown from 'react-markdown';
-import './Editor.css';
+import './Preview.css';
 import { Card, CardHeader } from 'reactstrap';
-import MarkedownIt from 'markdown-it';
+import marked from 'marked';
 
 const paneStyle = {
   borderRadius: '0px',
@@ -11,13 +10,24 @@ const paneStyle = {
 const headerStyle = {
   textAlign: 'center'
 };
-const md = MarkedownIt();
+
+marked.setOptions({
+  breaks: true,
+  pedantic: false,
+  gfm: true,
+  tables: true,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false,
+  xhtml: false
+});
+
+const renderer = new marked.Renderer();
+renderer.link = function(href, title, text) {
+  return `<a target="_blank" href="${href}">${text}</a>`;
+};
 
 class Preview extends Component {
-  createMarkup() {
-    return { __html: this.props.markdown };
-  }
-
   render() {
     return (
       <Card style={paneStyle}>
@@ -25,8 +35,10 @@ class Preview extends Component {
           Preview
         </CardHeader>
         <div
-          style={{ overflow: 'auto' }}
-          dangerouslySetInnerHTML={{ __html: md.render(this.props.markdown) }}
+          id="preview"
+          dangerouslySetInnerHTML={{
+            __html: marked(this.props.markdown, { renderer })
+          }}
         />
       </Card>
     );
