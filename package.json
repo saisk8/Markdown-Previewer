@@ -5,6 +5,7 @@
   "dependencies": {
     "ajv": "^6.5.2",
     "bootstrap": "^4.1.1",
+    "gh-pages": "^1.2.0",
     "highlight": "^0.2.4",
     "jquery": "^3.3.1",
     "markdown-it": "^8.4.1",
@@ -18,10 +19,12 @@
     "typeface-shrikhand": "0.0.54"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
   },
   "description": "A simple react app",
   "main": "index.js",
@@ -29,7 +32,7 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
     "eslint-plugin-react": "^7.10.0"
   },
   "repository": {
@@ -45,5 +48,5 @@
   "bugs": {
     "url": "https://github.com/somanath08/Markdown-Previewer/issues"
   },
-  "homepage": "https://github.com/somanath08/Markdown-Previewer#readme"
+  "homepage": "https://somanath08.github.io/Markdown-Previewer"
 }
